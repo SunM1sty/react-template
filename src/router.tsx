@@ -1,22 +1,25 @@
 import {createBrowserRouter} from "react-router-dom";
 
 import {App} from "./App";
-import {ErrorPage} from './pages/ErrorPage';
-import {AboutPageAsync} from "./pages/AboutPage";
-import {HomePageAsync} from "./pages/HomePage";
-
 export const router = createBrowserRouter([
     {
         element: <App/>,
-        errorElement: <ErrorPage />,
+        path: '/',
+        errorElement: <div>
+            Error
+        </div>,
         children: [
             {
                 path: 'about',
-                element: <AboutPageAsync />,
+                element: <div>
+                    About page
+                </div>,
             },
             {
                 path: '/',
-                element: <HomePageAsync />
+                element: <div>
+                    Home page
+                </div>
             }
         ]
     }
